@@ -36,7 +36,7 @@ Para compilar y ejecutar la aplicación, seguir estos pasos:
  
 ## Prueba del Endpoint
 
-para probar el endpoint de registro utilizando `curl`:
+Para probar el endpoint de registro utilizando `curl`:
 
 ```bash
 curl --location 'http://localhost:8080/api/users/register' \
