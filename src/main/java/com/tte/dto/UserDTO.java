@@ -17,7 +17,7 @@ public class UserDTO {
     private Date lastLogin;
     private boolean isActive;
     private List<PhoneDTO> phones;
-    // Getter y Setter para cada campo...
+
 
     @Override
     public String toString() {
