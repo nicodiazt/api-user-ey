@@ -1,6 +1,4 @@
-
-
-```markdown
+ 
 # Prueba Técnica EY Octubre 2023
 
 Esta aplicación permite realizar el registro de usuarios a través de un endpoint. A continuación, se describen los pasos para compilar y ejecutar la aplicación, así como una prueba del endpoint utilizando `curl`.
@@ -9,30 +7,30 @@ Esta aplicación permite realizar el registro de usuarios a través de un endpoi
 
 Para compilar y ejecutar la aplicación, seguir estos pasos:
 
-1. Asegúrate de tener Gradle instalado en tu sistema.
 
-2. Clona el repositorio de la aplicación:
+1. Clonar el repositorio de la aplicación:
+ 
 
    ```bash
    git clone https://github.com/nicodiazt/api-user-ey.git
    ```
 
-3. Navega al directorio raíz del proyecto:
+2. Navega al directorio raíz del proyecto:
 
    ```bash
    cd api-user-ey
    ```
 
-4. Ejecuta la compilación de la aplicación:
+3. Ejecuta la compilación de la aplicación:
 
    ```bash
    gradle build
    ```
 
-5. Una vez que la compilación sea exitosa, puedes ejecutar la aplicación con el siguiente comando:
+4. Una vez compilado, ejecutar la aplicación con el siguiente comando:
 
    ```bash
-   java -jar build/libs/user-api-1.0.0.jar
+   java -jar build/libs/user-api-ey-1.0.0.jar
    ```
  
  
@@ -60,8 +58,8 @@ curl --location 'http://localhost:8080/api/users/register' \
 
 ## Documentación solicitada:
 
-- `classDiagram.png`: Diagrama de clases generado con Mermaid.
-- `sequenceDiagram.png`: Diagrama de secuencia generado con Mermaid.
+- `classDiagram.png`: Diagrama de clases.
+- `sequenceDiagram.png`: Diagrama de secuencia.
 - `schema.sql`: Estructura de la base de datos.
 
 
