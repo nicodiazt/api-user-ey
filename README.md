@@ -30,7 +30,7 @@ Para compilar y ejecutar la aplicación, seguir estos pasos:
 4. Una vez compilado, ejecutar la aplicación con el siguiente comando:
 
    ```bash
-   java -jar build/libs/user-api-ey-1.0.0.jar
+   java -jar build/libs/api-user-ey-1.0.0.jar
    ```
  
  
