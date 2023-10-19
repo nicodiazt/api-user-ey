@@ -1,0 +1,24 @@
+%% https://mermaid.live
+sequenceDiagram
+  participant Client
+  participant Controller
+  participant Service
+  participant Mapper
+  participant Repository
+  participant Database
+
+  Client->>Controller: Solicitud POST a /api/users/register
+  Controller->>Service: UserController.crearUser(userDTO)
+  Service->>Mapper: UserService.crearUser(userDTO)
+  Mapper->>Service: UserMapper.toUser(userDTO)
+  Service->>Repository: UserService.save(user)
+  Repository->>Database: Almacenar en la Base de Datos
+  Database-->>Repository: Confirmación
+  Repository-->>Service: Éxito
+  Service-->>Mapper: UserResponseRegisterDTO
+  Mapper-->>Service: UserResponseRegisterDTO
+  Service-->>Controller: Respuesta exitosa con UserResponseRegisterDTO
+  Controller-->>Client: Respuesta exitosa con UserResponseRegisterDTO
+  Controller-->>Service: CustomExceptionHandler.handleCustomException
+  Service-->>Controller: Respuesta de error con mensaje
+  Controller-->>Client: Respuesta de error con mensaje

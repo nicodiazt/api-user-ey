@@ -1,0 +1,84 @@
+%% https://mermaid.live
+classDiagram
+  class UserController {
+    +crearUser(userDTO: UserDTO): ResponseEntity<UserResponseRegisterDTO>
+  }
+
+  class UserDTO {
+    -id: UUID
+    -name: String
+    -email: String
+    -password: String
+    -created: Date
+    -modified: Date
+    -lastLogin: Date
+    -isActive: boolean
+    -phones: List<PhoneDTO>
+  }
+
+  class PhoneDTO {
+    -number: String
+    -citycode: String
+    -countrycode: String
+  }
+
+  class UserResponseRegisterDTO {
+    -id: UUID
+    -name: String
+    -email: String
+    -password: String
+    -created: Date
+    -modified: Date
+    -lastLogin: Date
+    -token: UUID
+    -isActive: boolean
+  }
+
+  class CustomException {
+    +CustomException(mensaje: String)
+  }
+
+  class CustomExceptionHandler {
+    +handleCustomException(ex: CustomException): ResponseEntity<Object>
+  }
+
+  class UserMapper {
+    +toUserDTO(user: User): UserDTO
+    +toRegisterResponse(user: User): UserResponseRegisterDTO
+    -toUser(userDTO: UserDTO): User
+  }
+
+  class Phone {
+    -id: Long
+    -number: String
+    -citycode: String
+    -countrycode: String
+  }
+
+  class User {
+    -id: UUID
+    -name: String
+    -email: String
+    -password: String
+    -created: Date
+    -modified: Date
+    -lastLogin: Date
+    -isActive: boolean
+    -Phones: List<Phone>
+    +onCreate()
+    +onUpdate()
+  }
+
+  class UserRepository {
+    +existsByEmail(email: String): boolean
+  }
+
+  UserController --> UserService
+  UserController --> CustomExceptionHandler
+  UserController "1" --> "1" UserDTO
+  UserDTO "1" --> "*" PhoneDTO
+  UserService --> UserRepository
+  UserMapper --> User
+  UserMapper --> UserDTO
+  UserMapper --> UserResponseRegisterDTO
+  User --> Phone
