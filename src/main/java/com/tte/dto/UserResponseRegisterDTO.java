@@ -18,7 +18,7 @@ public class UserResponseRegisterDTO {
     private UUID token;
     private boolean isActive;
  
-    // Getter y Setter para cada campo...
+
 
     @Override
     public String toString() {
