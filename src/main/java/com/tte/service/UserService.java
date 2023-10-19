@@ -75,7 +75,7 @@ public boolean validateFormatMail(String mail) {
 }
  
  public boolean validateFormatPassword(String contraseña) {
-    // Requisitos: una mayúscula, letras minúsculas y al menos dos números
+    
     String regexPassword = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d.*\\d).*$";
     Pattern pattern = Pattern.compile(regexPassword);
     Matcher matcher = pattern.matcher(contraseña);
